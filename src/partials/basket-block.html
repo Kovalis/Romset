@@ -1,0 +1,143 @@
+<div class="grid-container">
+  <section class="basket-info">
+    <h1>Ваши данные</h1>
+    <form action="">
+      <div class="grid-x grid-margin-x">
+        <div class="cell medium-6">
+          <div class="basket-info__two-row">
+            <input type="text" placeholder="Телефон" />
+            <input type="text" placeholder="Имя" />
+          </div>
+
+          <div class="basket-info__wrap-radio">
+            <input type="radio" name="pay_block" id="cash_block" checked />
+            <label for="cash_block" class="basket-info__label-icon js-basket-info__label-icon">
+              <svg class="basket-info__label-svg" width="18" height="22">
+                <use xlink:href="{{root}}assets/img/basket-form/cash.svg#svg" /></svg
+              >Наличными</label
+            >
+            <input type="radio" name="pay_block" id="cart_block" />
+            <label for="cart_block" class="basket-info__label-icon js-basket-info__label-icon">
+              <svg class="basket-info__label-svg" width="22" height="18">
+                <use xlink:href="{{root}}assets/img/basket-form/card.svg#svg" /></svg
+              >Картой</label
+            >
+          </div>
+
+          <ul
+            class="tabs hide js-basket-info__tabs-label-icon"
+            data-deep-link="true"
+            data-update-history="true"
+            data-deep-link-smudge="true"
+            data-deep-link-smudge-delay="500"
+            data-tabs
+            id="deeplinked-tabs"
+          >
+            <li class="tabs-title is-active">
+              <a href="#panel1d" aria-selected="true">Наличными</a>
+            </li>
+            <li class="tabs-title"><a href="#panel2d">Картой</a></li>
+          </ul>
+
+          <div class="tabs-content" data-tabs-content="deeplinked-tabs">
+            <div class="basket-info__tabs-panel tabs-panel is-active" id="panel1d">
+              <div class="basket-info__flex">
+                <div>
+                  <input type="checkbox" id="prepare-change" />
+                  <label
+                    class="basket-info__prepare-change js-basket-info__prepare-change"
+                    for="prepare-change"
+                    >Подготовить сдачу с</label
+                  >
+                </div>
+                <input class="js-prepare-change-count" type="text" placeholder="Сумма" disabled />
+              </div>
+            </div>
+            <div class="basket-info__tabs-panel tabs-panel" id="panel2d"></div>
+          </div>
+          <input type="text" placeholder="Комменатрий к заказу" />
+          <div class="basket-info__flex-count">
+            <div>Палочки + соусник обычные</div>
+            <div class="product-count-item">
+              <button class="product-count-item__btn js-product-count-btn-take">
+                <img
+                  src="{{root}}assets/img/basket-count/take-small.svg"
+                  width="10px"
+                  height="1px"
+                  alt=""
+                />
+              </button>
+              <div class="product-count-item__count">10</div>
+              <button class="product-count-item__btn js-product-count-btn-add">
+                <img
+                  src="{{root}}assets/img/basket-count/add-small.svg"
+                  width="20px"
+                  height="20px"
+                  alt=""
+                />
+              </button>
+            </div>
+          </div>
+          <div class="basket-info__flex-count">
+            <div>Палочки + соусник обычные</div>
+            <div class="product-count-item">
+              <button class="product-count-item__btn js-product-count-btn-take">
+                <img
+                  src="{{root}}assets/img/basket-count/take-small.svg"
+                  width="10px"
+                  height="1px"
+                  alt=""
+                />
+              </button>
+              <div class="product-count-item__count">10</div>
+              <button class="product-count-item__btn js-product-count-btn-add">
+                <img
+                  src="{{root}}assets/img/basket-count/add-small.svg"
+                  width="20px"
+                  height="20px"
+                  alt=""
+                />
+              </button>
+            </div>
+          </div>
+          <input class="basket-info__promocode" type="text" placeholder="Введите промокод" />
+        </div>
+        <div class="cell medium-6">
+          <div class="basket-info__wrap-radio">
+            <input type="radio" name="delivery" id="courier" checked />
+            <label for="courier">Курьером</label>
+            <input type="radio" name="delivery" id="pickup" />
+            <label for="pickup">Самовывоз</label>
+          </div>
+
+          <div class="basket-info__two-row basket-info__two-row_bias">
+            <input type="text" placeholder="Улица" />
+            <input type="text" placeholder="Дом" />
+          </div>
+
+          <div class="basket-info__four-row">
+            <input type="text" placeholder="Кв" />
+            <input type="text" placeholder="Подъезд" />
+            <input type="text" placeholder="Этаж" />
+            <input type="text" placeholder="Код" />
+          </div>
+          <div class="basket-info__wrap-radio">
+            <input type="radio" name="time" id="now" checked />
+            <label for="now">На сейчас</label>
+            <input type="radio" name="time" id="time" />
+            <label for="time">На время</label>
+          </div>
+          <input type="text" placeholder="E-mail(необязательно)" />
+        </div>
+        <div class="cell">
+          <button class="basket-info__main-btn main-btn">Оформить заказ</button>
+          <div class="basket-info__sent-text">
+            Нажимая на кнопку Оформить заказ, Вы подтверждаете свое согласие на обработку
+            персональных данных в соответствии с
+            <a class="basket-info__sent-link" href="#" target="_blank">Публичной оффертой</a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </section>
+</div>

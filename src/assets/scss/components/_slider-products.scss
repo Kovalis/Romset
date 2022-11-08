@@ -1,0 +1,18 @@
+.slider-products {
+  position: relative;
+  padding-bottom: 50px;
+
+  &__item {
+    height: 100%;
+  }
+
+  &__tabs {
+    margin-bottom: 30px;
+  }
+
+  &__swiper-wrapper {
+    .swiper-slide {
+      height: auto;
+    }
+  }
+}

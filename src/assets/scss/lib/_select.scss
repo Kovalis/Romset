@@ -1,0 +1,132 @@
+/* The container must be positioned relative: */
+.custom-select {
+  position: relative;
+  box-shadow: 0px 0px 18px 6px rgba($black, 0.09);
+  background-color: $white;
+
+  @include breakpoint(small only) {
+    border-radius: 10px;
+  }
+
+  @include breakpoint(medium) {
+    border-radius: 15px;
+  }
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element: */
+}
+
+.custom-select__title {
+  @include breakpoint(small only) {
+    display: none;
+  }
+
+  @include breakpoint(medium) {
+    font-weight: 300;
+    font-size: 14px;
+    color: $grey;
+    padding: 4px 14px 5px;
+  }
+}
+
+.select-selected {
+  position: relative;
+  background-color: $white;
+  padding: 8px 40px 8px 14px;
+  border-radius: 15px;
+  border-color: transparent transparent rgba($black, 0.1) transparent;
+
+  @include breakpoint(small only) {
+    padding-left: 48px;
+    font-size: 24px !important;
+  }
+}
+
+.select-selected:before {
+  @include breakpoint(small only) {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 9px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    background: url("../../assets/img/select-menu-mob.svg") no-repeat center;
+    background-size: 24px;
+  }
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  width: 14px;
+  height: 14px;
+  background: url(../../assets/img/select-arrow.svg) no-repeat center;
+  background-size: 14px;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active {
+  border-radius: 15px 15px 0px 0px;
+  position: relative;
+  z-index: 100;
+}
+.select-selected.select-arrow-active:before {
+  @include breakpoint(medium) {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 9px;
+    right: 9px;
+    bottom: 0;
+    height: 1px;
+    background-color: $grey;
+  }
+}
+
+.select-selected.select-arrow-active:after {
+  transform: rotate(-180deg) translateY(50%);
+}
+
+/* style the items (options), including the selected item: */
+.select-items div {
+  padding: 8px 14px;
+}
+
+.select-items div,
+.select-selected {
+  color: $white;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 18px;
+  min-width: 220px;
+  color: $black-custom;
+}
+
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  box-shadow: 0px 0px 18px 6px rgba($black, 0.09);
+  background-color: $white;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+  color: $accent-color;
+}

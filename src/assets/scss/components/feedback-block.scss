@@ -1,0 +1,69 @@
+.feedback-block {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &__btn {
+    @include breakpoint(small only) {
+      display: block;
+      width: 100%;
+    }
+
+    @include breakpoint(medium) {
+      position: absolute;
+      right: 0;
+      top: 10px;
+    }
+  }
+
+  &__item {
+    background-color: $white;
+    padding: 10px;
+    border-radius: 5px;
+
+    @include breakpoint(small only) {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+
+    @include breakpoint(medium) {
+      &:not(:last-child) {
+        margin-bottom: 22px;
+      }
+    }
+  }
+
+  &__item-top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__name {
+    @include breakpoint(medium) {
+      font-weight: 500;
+      font-size: 24px;
+      margin-right: 20px;
+    }
+  }
+
+  &__date {
+    color: $grey;
+    font-size: 18px;
+  }
+
+  &__text {
+    max-width: 720px;
+  }
+
+  &__bottom {
+    flex-grow: 1;
+  }
+
+  &__top {
+    @include breakpoint(small only) {
+      margin-bottom: 20px;
+    }
+  }
+}

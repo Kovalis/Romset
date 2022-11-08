@@ -1,0 +1,38 @@
+.mobile-fix-menu {
+  padding: 12px 5px 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $white;
+  z-index: 10;
+  border-top: 0.5px solid $grey;
+
+  &__ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__li {
+    list-style: none;
+    padding: 0;
+
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+
+  &__link {
+    text-align: center;
+  }
+
+  &__img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2px;
+  }
+}

@@ -1,0 +1,75 @@
+.aside-left {
+  padding-top: 26px;
+  padding-right: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 330px;
+  flex-shrink: 0;
+
+  @include breakpoint(medium down) {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    background-color: $white;
+    max-width: 100%;
+    min-height: calc(100% - 84px);
+    z-index: 10;
+    transition: left 0.5s;
+  }
+
+  &_active {
+    left: 0;
+  }
+
+  &__nav {
+    @include breakpoint(small only) {
+      overflow-y: auto;
+      height: calc(100vh - 310px);
+    }
+  }
+
+  &__sticky {
+    position: sticky;
+    top: 26px;
+  }
+
+  &__img {
+    padding-bottom: 30px;
+    border-bottom: 1px solid $black;
+    margin-bottom: 32px;
+  }
+
+  &__logo {
+    border-bottom: 0.5px solid $grey;
+    padding-bottom: 30px;
+    margin-bottom: 31px;
+    margin-right: 5px;
+  }
+
+  &__ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  &__li {
+    position: relative;
+    list-style: none;
+    margin-bottom: 30px;
+  }
+
+  &__link {
+    display: flex;
+  }
+
+  &__link-mark {
+    position: absolute;
+    right: 0;
+    top: -11px;
+  }
+
+  &__link-img {
+    margin-right: 20px;
+    width: 30px;
+  }
+}

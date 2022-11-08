@@ -1,0 +1,45 @@
+.footer {
+  @include breakpoint(small only) {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    text-align: center;
+  }
+
+  @include breakpoint(medium) {
+    padding-top: 30px;
+    padding-bottom: 60px;
+    border-top: 0.5px solid $grey;
+  }
+
+  &__ul {
+    list-style: none;
+    margin: 0;
+    line-height: 1;
+  }
+
+  &__li {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.2;
+    color: $grey;
+  }
+
+  &__link {
+    color: $grey;
+    text-decoration: underline;
+  }
+
+  &__messenger {
+    @include breakpoint(small only) {
+      margin-bottom: 30px;
+    }
+  }
+}

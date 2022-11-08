@@ -1,0 +1,91 @@
+.category-main {
+  $el: &;
+
+  @include breakpoint(small only) {
+    padding-bottom: 10px;
+  }
+
+  @include breakpoint(medium) {
+    padding-bottom: 20px;
+  }
+
+  &__item {
+    position: relative;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    color: $white;
+    display: flex;
+    align-items: flex-end;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    overflow: hidden;
+
+    @include breakpoint(small only) {
+      padding: 10px 11px;
+      height: 147px;
+      margin-bottom: 10px;
+    }
+
+    @include breakpoint(medium) {
+      padding: 10px;
+      height: 200px;
+      margin-bottom: 30px;
+    }
+
+    &:hover,
+    &:focus {
+      color: $white;
+    }
+
+    &_small {
+      @include breakpoint(small only) {
+        width: calc(50% - 5px);
+      }
+
+      @include breakpoint(medium) {
+        width: calc(50% - 11px);
+      }
+
+      &:not(:last-child) {
+        @include breakpoint(small only) {
+          margin-right: 10px;
+        }
+
+        @include breakpoint(medium) {
+          margin-right: 22px;
+        }
+      }
+    }
+
+    &_menu {
+      @include breakpoint(small only) {
+        font-size: 18px;
+      }
+
+      @include breakpoint(medium) {
+        display: none;
+      }
+    }
+  }
+
+  &__link-mark {
+    top: 11px;
+    right: 13px;
+    position: absolute;
+  }
+
+  &__item-row {
+    display: flex;
+
+    #{$el} {
+      &__item {
+        @include breakpoint(medium) {
+          width: calc(50% - 11px);
+        }
+      }
+    }
+  }
+}

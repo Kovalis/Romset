@@ -1,0 +1,148 @@
+.product-page {
+  &__navigation {
+    display: flex;
+    justify-content: space-between;
+
+    @include breakpoint(small only) {
+      padding-bottom: 15px;
+    }
+
+    @include breakpoint(medium) {
+      padding-top: 23px;
+      padding-bottom: 53px;
+    }
+  }
+
+  &__navigation-link {
+    display: flex;
+    font-size: 18px;
+    position: relative;
+
+    &:before {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 20px;
+      background: url("../../assets/img/product-page/arrow-navigation.svg") $accent-color no-repeat
+        center;
+      background-size: 20px;
+      border-radius: 20px;
+      margin-right: 10px;
+    }
+
+    &_right {
+      flex-direction: row-reverse;
+
+      &:before {
+        content: "";
+        transform: rotate(-180deg);
+        margin-right: 0;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  &__product {
+    background-color: $white;
+    margin-bottom: 30px;
+
+    @include breakpoint(small only) {
+      margin-left: 15px;
+      margin-right: 15px;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+  }
+
+  &__wrap {
+    @include breakpoint(medium) {
+      display: flex;
+      align-items: flex-start;
+    }
+  }
+
+  &__main-img {
+    @include breakpoint(medium only) {
+      max-width: 45%;
+    }
+  }
+
+  &__content {
+    @include breakpoint(small only) {
+      padding: 10px 10px 30px;
+    }
+
+    @include breakpoint(medium only) {
+      max-width: 45%;
+    }
+
+    @include breakpoint(medium) {
+      padding: 20px 40px;
+      flex-grow: 1;
+    }
+  }
+
+  &__title {
+    @include breakpoint(small only) {
+      max-width: 80%;
+      text-align: left;
+    }
+
+    @include breakpoint(medium) {
+      font-weight: 500;
+      font-size: 48px;
+      margin-bottom: 12px;
+    }
+  }
+
+  &__weight {
+    color: $accent-color;
+    font-weight: 300;
+    font-size: 18px;
+
+    @include breakpoint(small only) {
+      margin-bottom: 15px;
+    }
+
+    @include breakpoint(medium) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__price-count {
+    display: flex;
+    align-items: center;
+
+    @include breakpoint(small only) {
+      margin-bottom: 30px;
+    }
+
+    @include breakpoint(medium) {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__count-item {
+    margin-left: 30px;
+  }
+
+  &__compound {
+    font-weight: 500;
+    font-size: 18px;
+    color: $black-custom;
+    margin-bottom: 5px;
+  }
+
+  &__compound-text {
+    font-weight: 300;
+    font-size: 18px;
+    color: $black-custom;
+    margin-bottom: 31px;
+  }
+
+  &__recommended-products {
+    @include breakpoint(small only) {
+      margin-bottom: 30px;
+    }
+  }
+}

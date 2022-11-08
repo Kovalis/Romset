@@ -1,0 +1,89 @@
+.basket-info {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &__flex {
+    display: flex;
+    align-items: center;
+  }
+
+  &__two-row {
+    display: grid;
+    grid-column-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+
+    &_bias {
+      grid-column-gap: 14px;
+      grid-template-columns: calc(75% - 12px / 2) calc(25% - 12px / 2);
+    }
+  }
+
+  &__four-row {
+    display: grid;
+    column-gap: 14px;
+    grid-template-columns: repeat(4, calc(25% - 42px / 4));
+  }
+
+  &__tabs-panel {
+    padding: 0;
+  }
+
+  &__wrap-radio {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 5px;
+    background-color: $white;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  &__prepare-change {
+    white-space: nowrap;
+  }
+
+  &__flex-count {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  &__promocode {
+    @include breakpoint(small only) {
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    @include breakpoint(medium) {
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__main-btn {
+    width: 100%;
+    margin-bottom: 12px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+
+  &__sent-text {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  &__sent-link{
+    text-decoration: underline;
+  }
+
+  &__label-icon {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__label-svg {
+    margin-right: 10px;
+  }
+}

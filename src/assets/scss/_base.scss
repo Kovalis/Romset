@@ -1,0 +1,325 @@
+body {
+  overflow-x: hidden;
+  font-size: 18px;
+  line-height: 1.22;
+  min-height: 100vh;
+  color: $black;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5 {
+  font-weight: 500;
+  line-height: 1.22;
+}
+
+h1,
+.h1 {
+  @include breakpoint(small only) {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  @include breakpoint(medium) {
+    margin-bottom: 30px;
+  }
+}
+
+h2,
+.h2 {
+  @include breakpoint(small only) {
+    margin-bottom: 10px;
+  }
+
+  @include breakpoint(medium) {
+    margin-bottom: 30px;
+  }
+}
+
+h3,
+.h3 {
+  @include breakpoint(small only) {
+    margin-bottom: 10px;
+  }
+
+  @include breakpoint(medium) {
+    margin-bottom: 20px;
+  }
+}
+
+h4,
+.h4 {
+  @include breakpoint(small) {
+    margin-bottom: 10px;
+  }
+
+  @include breakpoint(medium) {
+    margin-bottom: 20px;
+  }
+}
+
+.logo {
+  display: block;
+  max-width: 86px;
+  height: auto;
+
+  @include breakpoint(medium) {
+    max-width: 138px;
+  }
+
+  @include breakpoint(large) {
+    max-width: 156px;
+  }
+}
+p {
+  font-size: 18px;
+  line-height: 1.22;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+a {
+  color: $black;
+  transition: color 0.3s;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+    text-decoration: none;
+  }
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  a {
+    text-decoration: none;
+    position: relative;
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -0.5px;
+      height: 1.5px;
+      background-color: $accent-color;
+      transition: opacity 0.3s;
+    }
+
+    &:hover {
+      &:after {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+.main-btn {
+  background-color: $accent-color-hover;
+  color: $white;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  @include breakpoint(small only) {
+    padding: 4px 15px;
+    font-size: 18px;
+    min-width: 95px;
+  }
+
+  @include breakpoint(medium) {
+    padding: 8px 15px;
+    font-size: 24px;
+    min-width: 143px;
+  }
+
+  &_wide {
+    min-width: 188px;
+
+    @include breakpoint(small only) {
+      padding: 11px 15px;
+    }
+  }
+
+  &:hover {
+    background-color: $accent-color-hover;
+  }
+}
+
+.second-btn {
+  background-color: $black;
+  color: $white;
+  border-radius: 5px;
+  font-size: 18px;
+  line-height: 1.2;
+  padding: 7px 17px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $black;
+  }
+}
+
+.no-js {
+  @include breakpoint(medium down) {
+    .main-menu__wrap {
+      display: none;
+    }
+  }
+}
+
+input {
+  line-height: 1.22;
+
+  &[type="text"],
+  &[type="number"] {
+    background-color: $white;
+    border-radius: 5px;
+    padding: 8.5px 10px;
+    font-size: 18px;
+    line-height: 1;
+    height: auto;
+    margin-bottom: 20px;
+    color: $black;
+    border: none;
+    outline: none;
+    box-shadow: none;
+
+    &::placeholder {
+      color: $grey;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+    }
+
+    &:hover,
+    &:focus {
+      border: none;
+      box-shadow: none;
+    }
+  }
+
+  &[type="radio"] {
+    display: none;
+
+    & + label {
+      font-size: 18px;
+      color: $black;
+      margin: 0;
+      padding: 4px 10px;
+      border: none;
+      outline: none;
+      box-shadow: none;
+      text-align: center;
+    }
+
+    &:checked + label {
+      background-color: $accent-color;
+      height: auto;
+      color: $white;
+      border: none;
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
+  &[type="checkbox"] {
+    display: none;
+
+    & + label {
+      position: relative;
+      font-size: 18px;
+      color: $black;
+      margin: 0;
+      padding: 0 10px;
+      line-height: 1.22;
+      border: none;
+      outline: none;
+      box-shadow: none;
+      text-align: center;
+      padding-left: 30px;
+      margin-bottom: 20px;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        background: $accent-color no-repeat center;
+        background-size: 12px;
+        border-radius: 30px;
+      }
+    }
+
+    &:checked + label {
+      &::before {
+        content: "";
+        background-image: url("../../assets/img/checkbox.svg");
+        background-size: 12px;
+      }
+    }
+  }
+}
+
+select {
+  border: none;
+  margin-bottom: 0;
+  padding-left: 0;
+  font-weight: 400;
+  font-size: 18px;
+  color: $black-custom;
+  -webkit-appearance: none;
+  appearance: none;
+  background: url(../../assets/img/select-arrow.svg) #fff no-repeat calc(100% - 10px);
+  background-size: 12px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* Прозрачность формы автозаполнения start*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  transition: background-color 0s ease-in-out 0s;
+  color: #000;
+  -webkit-text-fill-color: #000;
+  background: transparent;
+}
+/* Прозрачность формы автозаполнения end*/

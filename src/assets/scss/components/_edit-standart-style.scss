@@ -1,0 +1,116 @@
+.swiper-pagination-bullet {
+  background-color: $grey;
+  width: 10px;
+  height: 10px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $accent-color;
+}
+
+.swiper {
+  padding-bottom: 25px;
+}
+
+.swiper-pagination {
+  bottom: 0px !important;
+}
+
+.swiper-button-prev {
+  transform: rotate(180deg);
+  left: 0;
+}
+
+.swiper-button-next {
+  right: 0;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  border-radius: 60px;
+  flex-shrink: 0;
+  background-color: $black;
+  display: flex;
+
+  @include breakpoint(small only) {
+    width: 38px;
+    height: 38px;
+  }
+
+  @include breakpoint(medium) {
+    width: 60px;
+    height: 60px;
+  }
+
+  &:after {
+    content: "";
+    width: 27px;
+    height: 27px;
+    background: url("../../assets/img/arrow-slider.svg") no-repeat center;
+    margin: auto;
+    position: relative;
+
+    @include breakpoint(small only) {
+      background-size: 12px;
+    }
+
+    @include breakpoint(medium) {
+      left: -4px;
+      background-size: 27px;
+    }
+  }
+}
+
+.tabs-title {
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+.tabs-title > a {
+  background: none;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  color: $grey;
+  text-decoration: underline;
+  padding: 0;
+
+  &:hover {
+    color: $black;
+    background: none;
+  }
+}
+
+.tabs-title > a:focus,
+.tabs-title > a[aria-selected="true"] {
+  color: $black;
+  background: none;
+  text-decoration: none;
+}
+
+.grid-container {
+  @include breakpoint(small only) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  @include breakpoint(medium) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+.tabs-panel {
+  padding: 0;
+}
+
+.tabs-content {
+  background-color: transparent;
+  border: none;
+}
+
+.tabs {
+  background-color: transparent;
+  border: none;
+  margin-bottom: 20px;
+}
